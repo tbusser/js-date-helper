@@ -16,8 +16,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
  * @param {Array<number>} [weekendDays=[number]] The days of the week which
  *        make up the weekend. By default this will be Saturday and Sunday.
  *
- * @returns {boolean} True when the provided date falls on the weekend;
- *          otherwise the result is false.
+ * @returns {boolean} Returns true when the provided date falls on the weekend.
  *
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
