@@ -25,9 +25,10 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
  *
  * @example
  *   // This wil return true
- *   isLater(new Date('1999-12-31'), new Date('1999-12-31'));
+ *   const date = new Date(2019, 0, 1);
+ *   isLater(date, date);
  *   // This will return false
- *   isLater(new Date('1999-12-31'), new Date('1999-12-31'), false);
+ *   isLater(date, date, false);
  */
 export default function isLater(date, minDate, isInclusive = true) {
 	if (!isDateLike(date)) {

@@ -26,9 +26,10 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
  *
  * @example
  *   // This wil return true
- *   isEarlier(new Date('1999-12-31'), new Date('1999-12-31'));
+ *   const date = new Date(2019, 0, 1);
+ *   isEarlier(date, date);
  *   // This will return false
- *   isEarlier(new Date('1999-12-31'), new Date('1999-12-31'), false);
+ *   isEarlier(date, date, false);
  */
 export default function isEarlier(date, maxDate, isInclusive = true) {
 	if (!isDateLike(date)) {
