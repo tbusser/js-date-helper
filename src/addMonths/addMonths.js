@@ -2,7 +2,7 @@
 	IMPORTS
 \* ========================================================================== */
 import isDateLike from '../_lib/isDateLike/isDateLike';
-import getLastDayOfMonth from '../getLastDayOfMonth';
+import getLastDayOfMonth from '../getLastDayOfMonth/getLastDayOfMonth.js';
 
 
 
