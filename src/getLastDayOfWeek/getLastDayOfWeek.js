@@ -21,7 +21,7 @@ import removeTime from '../removeTime/removeTime.js';
 /**
  * Returns the last day of the week in which the provided date falls.
  *
- * @param {Date|number} date The date for which to return the first day of
+ * @param {Date|number} date The date for which to return the last day of
  *       the week.
  * @param {number} [firstWeekDay=1] Optional parameter to specify on which day
  *        a week starts. By default this will be Monday.
