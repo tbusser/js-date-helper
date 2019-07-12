@@ -2,6 +2,7 @@
     IMPORTS
 \* ========================================================================== */
 import isDateLike from '../_lib/isDateLike/isDateLike.js';
+import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages.js';
 
 
 
@@ -33,10 +34,10 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
  */
 export default function isEarlier(date, maxDate, isInclusive = true) {
 	if (!isDateLike(date)) {
-		throw new TypeError('The date argument is not of type Date or Number');
+		throw new TypeError(dateLikeTypeError());
 	}
 	if (!isDateLike(maxDate)) {
-		throw new TypeError('The maxDate argument is not of type Date or Number')
+		throw new TypeError(dateLikeTypeError('maxDate'));
 	}
 
 	const

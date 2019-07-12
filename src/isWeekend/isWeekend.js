@@ -1,8 +1,10 @@
 /* ========================================================================== *\
 	IMPORTS
 \* ========================================================================== */
-import { defaultWeekend } from '../constants/index.js';
+import { dateLikeTypeError, daysOfWeekArrayTypeError } from '../_lib/errorMessages/errorMessages.js';
 import isDateLike from '../_lib/isDateLike/isDateLike.js';
+
+import { defaultWeekend } from '../constants/index.js';
 
 
 
@@ -23,11 +25,10 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
  */
 export default function isWeekend(date, weekendDays = defaultWeekend) {
 	if (!isDateLike(date)) {
-		throw new TypeError('The date argument is not of type Date or Number');
+		throw new TypeError(dateLikeTypeError());
 	}
 	if (!Array.isArray(weekendDays)) {
-		// eslint-disable-next-line max-len
-		throw new TypeError('The weekendDays argument is not of type Array. Its values should be between 0 (Sunday) and 6 (Saturday)');
+		throw new TypeError(daysOfWeekArrayTypeError('weekendDays'));
 	}
 
 	const

@@ -1,8 +1,10 @@
 /* ========================================================================== *\
     IMPORTS
 \* ========================================================================== */
-import removeTime from '../removeTime/removeTime.js';
+import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages.js';
 import isDateLike from '../_lib/isDateLike/isDateLike.js';
+
+import removeTime from '../removeTime/removeTime.js';
 
 
 
@@ -23,7 +25,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
  */
 export default function isToday(date) {
 	if (!isDateLike(date)) {
-		throw new TypeError('The date argument is not of type Date or Number');
+		throw new TypeError(dateLikeTypeError());
 	}
 
 	return removeTime(date).getTime() === removeTime(new Date()).getTime();

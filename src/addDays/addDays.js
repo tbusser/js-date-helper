@@ -1,6 +1,7 @@
 /* ========================================================================== *\
 	IMPORTS
 \* ========================================================================== */
+import { dateLikeTypeError, integerTypeError } from '../_lib/errorMessages/errorMessages';
 import isDateLike from '../_lib/isDateLike/isDateLike';
 
 
@@ -23,10 +24,10 @@ import isDateLike from '../_lib/isDateLike/isDateLike';
  */
 export default function addDays(date, days) {
 	if (!isDateLike(date)) {
-		throw new TypeError('The date argument is not of type Date or Number');
+		throw new TypeError(dateLikeTypeError());
 	}
 	if (!Number.isInteger(days)) {
-		throw new TypeError('The days argument is not an integer number');
+		throw new TypeError(integerTypeError('days'));
 	}
 
 	const

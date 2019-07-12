@@ -1,6 +1,7 @@
 /* ========================================================================== *\
     IMPORTS
 \* ========================================================================== */
+import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages.js';
 import isDateLike from '../_lib/isDateLike/isDateLike.js';
 
 
@@ -32,10 +33,10 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
  */
 export default function isLater(date, minDate, isInclusive = true) {
 	if (!isDateLike(date)) {
-		throw new TypeError('The date argument is not of type Date or Number');
+		throw new TypeError(dateLikeTypeError());
 	}
 	if (!isDateLike(minDate)) {
-		throw new TypeError('The minDate argument is not of type Date or Number');
+		throw new TypeError(dateLikeTypeError('minDate'));
 	}
 
 	const

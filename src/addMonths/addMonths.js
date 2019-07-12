@@ -1,7 +1,9 @@
 /* ========================================================================== *\
 	IMPORTS
 \* ========================================================================== */
+import { dateLikeTypeError, integerTypeError } from '../_lib/errorMessages/errorMessages';
 import isDateLike from '../_lib/isDateLike/isDateLike';
+
 import getLastDayOfMonth from '../getLastDayOfMonth/getLastDayOfMonth.js';
 
 
@@ -30,10 +32,10 @@ import getLastDayOfMonth from '../getLastDayOfMonth/getLastDayOfMonth.js';
  */
 export default function addMonths(date, months) {
 	if (!isDateLike(date)) {
-		throw new TypeError('The date argument is not of type Date or Number');
+		throw new TypeError(dateLikeTypeError());
 	}
 	if (!Number.isInteger(months)) {
-		throw new TypeError('The days argument is not an integer number');
+		throw new TypeError(integerTypeError(months));
 	}
 
 	const
