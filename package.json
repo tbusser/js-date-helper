@@ -1,6 +1,6 @@
 {
-  "name": "date-helper",
-  "version": "0.0.1",
+  "name": "js-date-helper",
+  "version": "1.0.0-beta.18",
   "description": "A collection of date functions, treeshakable and fully united tested",
   "repository": "https://github.com/tbusser/js-date-fns",
   "sideEffects": false,
@@ -26,7 +26,11 @@
     "sourceMap": false,
     "instrument": false
   },
-  "keywords": ["js","date","es6"],
+  "keywords": [
+    "js",
+    "date",
+    "es6"
+  ],
   "author": "Thijs Busser <tbusser@gmail.com>",
   "license": "MIT",
   "devDependencies": {
