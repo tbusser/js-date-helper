@@ -3,12 +3,12 @@ node_js:
   - "lts/*"
 
 script:
-  -npm test
+  - npm test
 
 before_deploy: |
   function npm_dist_tag() {
     if [[ "$TRAVIS_TAG" = *"-"* ]]; then
-      echo "next"
+      echo "beta"
     else
       echo "latest"
     fi
@@ -19,7 +19,6 @@ jobs:
     - stage: npm release
       if: tag IS present
       node_js: "lts/*"
-      tag: $(npm_dist_tag)
       script: ./scripts/build.sh
       before_deploy:
         cd ./tmp/package
@@ -28,5 +27,6 @@ jobs:
         email: "$NPM_EMAIL"
         api_key: "$NPM_TOKEN"
         skip_cleanup: true
+        tag: $(npm_dist_tag)
         on:
           tags: true
