@@ -16,7 +16,7 @@ jobs:
     - stage: npm release
       if: tag IS present
       node_js: "lts/*"
-      tag: $(npm_tag)
+      tag: $(npm_dist_tag)
       script: ./scripts/build.sh
       before_deploy:
         cd ./tmp/package
