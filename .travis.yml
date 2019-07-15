@@ -14,7 +14,8 @@ jobs:
         - npm test
         - ./scripts/build.sh
       before_deploy:
-        - function npm_dist_tag() {
+        - |
+          function npm_dist_tag() {
             if [[ "$TRAVIS_TAG" = *"-"* ]]; then
               echo "beta"
             else
