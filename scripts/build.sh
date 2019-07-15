@@ -8,7 +8,7 @@ cd "$root" || exit 1
 
 PATH="$(npm bin):$PATH"
 # XXX: $PACKAGE_OUTPUT_PATH must be an absolute path!
-dir=${PACKAGE_OUTPUT_PATH:-"$root/tmp/package"}
+dir=${PACKAGE_OUTPUT_PATH:-"$root/dist"}
 
 # Clean up output dir
 rm -rf "$dir"

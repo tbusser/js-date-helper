@@ -27,7 +27,7 @@ const listSubmodules = require('./_lib/listSubmodules.js');
 \* ========================================================================== */
 const
 	path = require('path'),
-	rootPath = process.env.PACKAGE_OUTPUT_PATH || path.resolve(process.cwd(), 'tmp/package'),
+	rootPath = process.env.PACKAGE_OUTPUT_PATH || path.resolve(process.cwd(), 'dist'),
 	initialPackages = getInitialPackages(),
 
 	defaultJSONContent = {

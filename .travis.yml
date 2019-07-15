@@ -22,7 +22,7 @@ jobs:
               echo "latest"
             fi
           }
-        - cd ./tmp/package
+        - cd ./dist
       deploy:
         provider: npm
         email: "$NPM_EMAIL"
