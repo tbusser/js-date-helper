@@ -1,6 +1,6 @@
 {
   "name": "js-date-helper",
-  "version": "1.0.0-beta.10",
+  "version": "1.0.0-beta.11",
   "description": "A collection of date functions, treeshakable and fully united tested",
   "repository": "https://github.com/tbusser/js-date-fns",
   "sideEffects": false,
