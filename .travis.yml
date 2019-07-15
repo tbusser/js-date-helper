@@ -14,7 +14,7 @@ before_deploy: |
     }
   }
 
-job:
+jobs:
   include:
     - stage: npm release
       if: tag IS present
