@@ -5,15 +5,6 @@ node_js:
 script:
   - npm test
 
-before_deploy: |
-  function npm_dist_tag() {
-    if [[ "$TRAVIS_TAG" = *"-"* ]]; then
-      echo "beta"
-    else
-      echo "latest"
-    fi
-  }
-
 jobs:
   include:
     - stage: npm release
@@ -23,15 +14,14 @@ jobs:
         - npm test
         - ./scripts/build.sh
       before_deploy:
-        function npm_dist_tag() {
-          if [[ "$TRAVIS_TAG" = *"-"* ]]; then
-            echo "beta"
-          else
-            echo "latest"
-          fi
-        }
-
-        cd ./tmp/package
+        - function npm_dist_tag() {
+            if [[ "$TRAVIS_TAG" = *"-"* ]]; then
+              echo "beta"
+            else
+              echo "latest"
+            fi
+          }
+        - cd ./tmp/package
       deploy:
         provider: npm
         email: "$NPM_EMAIL"
