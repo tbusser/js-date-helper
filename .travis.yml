@@ -19,8 +19,18 @@ jobs:
     - stage: npm release
       if: tag IS present
       node_js: "lts/*"
-      script: ./scripts/build.sh
+      script:
+        - npm test
+        - ./scripts/build.sh
       before_deploy:
+        function npm_dist_tag() {
+          if [[ "$TRAVIS_TAG" = *"-"* ]]; then
+            echo "beta"
+          else
+            echo "latest"
+          fi
+        }
+
         cd ./tmp/package
       deploy:
         provider: npm
