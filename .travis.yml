@@ -1,3 +1,30 @@
 language: node_js
 node_js:
   - "lts/*"
+
+script:
+  - npm test
+
+before_deploy: |
+  function npm_tag() {
+    if (env(TRAVIS_TAG).includes('beta')) {
+      return 'beta'
+    } else {
+      return ''
+    }
+  }
+
+job:
+  include:
+    - stage: npm release
+      if: tag IS present
+      node_js: "lts/*"
+      tag: $(npm_tag)
+      script: ./scripts/build.sh
+      before_deploy:
+        cd ./tmp/package
+      deploy:
+        provider: npm
+        email: "$NPM_EMAIL"
+        api_key: "$NPM_TOKEN"
+        skip_cleanup: true
