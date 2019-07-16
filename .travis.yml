@@ -2,14 +2,14 @@ language: node_js
 node_js:
   - "lts/*"
 
-script:
-  - npm test
-
 jobs:
   include:
+    - stage: tests
+      name: "Unit tests"
+      script: npm test
     - stage: npm release
+      name: "Release to NMP"
       if: tag IS present
-      node_js: "lts/*"
       script: ./scripts/build.sh
       before_deploy:
         - |
@@ -30,8 +30,10 @@ jobs:
           on:
             tags: true
     - stage: documentation
+      name: "Release documentation"
       if: branch = master
-      script: npm run docs
+      script:
+        - npm run docs
       deploy:
         - provider: pages
           skip_cleanup: true
@@ -39,5 +41,4 @@ jobs:
           keep_history: true
           local_dir: docs
           on:
-            tags: true
             branch: master

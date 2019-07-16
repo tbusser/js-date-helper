@@ -2,6 +2,9 @@
 
 A lightweight, tree shakable, and tested JavaScript library for working with dates.
 
+## Documentation
+There is a documentation site which will inform you of the methods available. The documentation contains information like parameter types, return values and a short description what each method does. The documentation can be found [here](https://tbusser.github.io/js-date-helper/)
+
 ## Dependencies
 The library itself has no dependencies. To be able to test and build the library a few packages are required. Most notably:
 - [Babel](https://babeljs.io/) to create a version of the library which can be used on Node.js
