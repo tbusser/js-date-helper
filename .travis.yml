@@ -10,10 +10,7 @@ jobs:
     - stage: npm release
       if: tag IS present
       node_js: "lts/*"
-      script:
-        - npm test
-        - npm run docs
-        - ./scripts/build.sh
+      script: ./scripts/build.sh
       before_deploy:
         - |
           function npm_dist_tag() {
@@ -32,11 +29,15 @@ jobs:
           tag: $(npm_dist_tag)
           on:
             tags: true
+    - stage: documentation
+      if: branch = master
+      script: npm run docs
+      deploy:
         - provider: pages
           skip_cleanup: true
           github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
           keep_history: true
-          local_dir: ./docs
+          local_dir: docs
           on:
             tags: true
             branch: master
