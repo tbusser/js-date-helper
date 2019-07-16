@@ -9,6 +9,8 @@
  * @param {string} [paramName="date"] The name of the argument.
  *
  * @returns {string} Returns the error message.
+ *
+ * @private
  */
 export const dayOfWeekRangeError = (paramName) => `The ${ paramName } argument is not an integer between 0 (Sunday) and 6 (Saturday)`;
 
@@ -24,6 +26,8 @@ export const dayOfWeekRangeError = (paramName) => `The ${ paramName } argument i
  *        will be "date".
  *
  * @returns {string} Returns the error message.
+ *
+ * @private
  */
 export const dateLikeTypeError = (paramName = 'date') => `The argument ${ paramName } is not of type Date or Number`;
 
@@ -33,6 +37,8 @@ export const dateLikeTypeError = (paramName = 'date') => `The argument ${ paramN
  * @param {string} paramName The name of the argument.
  *
  * @returns {string} Returns the error message.
+ *
+ * @private
  */
 export const integerTypeError = (paramName) => `The argument ${ paramName } is not an integer number`;
 
@@ -42,5 +48,7 @@ export const integerTypeError = (paramName) => `The argument ${ paramName } is n
  * @param {string} paramName The name of the argument.
  *
  * @returns {string} Returns the error message.
+ *
+ * @private
  */
 export const daysOfWeekArrayTypeError = (paramName) => 'The argument ${ paramName} is not of type Array. Its values should be between 0 (Sunday) and 6 (Saturday)'
