@@ -9,6 +9,8 @@
  *
  * @returns {boolean} True when the provided value is date like; otherwise the
  *          result is false.
+ *
+ * @private
  */
 export default function isDateLike(value) {
 	if (
