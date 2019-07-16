@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import removeTime from './removeTime.js';
 
 /**
- *
+ * @private
  */
 function createTestDate() {
 	// January 1, 2019 at 10:11:12.13
