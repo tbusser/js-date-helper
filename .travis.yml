@@ -27,14 +27,18 @@ jobs:
           api_key: "$NPM_TOKEN"
           skip_cleanup: true
           tag: $(npm_dist_tag)
+          on:
+            tags: true
     - stage: documentation
       name: "Release documentation"
+      if: branch = master
       script:
         - npm run docs
-        - echo "Documentation built"
       deploy:
         - provider: pages
           skip_cleanup: true
           github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
           keep_history: true
           local_dir: docs
+          on:
+            branch: master
