@@ -1,4 +1,4 @@
-# JavaScript Date Helpers [![Build Status](https://travis-ci.com/tbusser/js-date-fns.svg?branch=develop)](https://travis-ci.com/tbusser/js-date-fns)
+# JavaScript Date Helpers [![Build Status](https://travis-ci.com/tbusser/js-date-helper.svg?branch=develop)](https://travis-ci.com/tbusser/js-date-helper) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftbusser%2Fjs-date-helper.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftbusser%2Fjs-date-helper?ref=badge_shield)
 
 A lightweight, tree shakable, and tested JavaScript library for working with dates.
 
@@ -24,6 +24,9 @@ With the library installed you can import only the methods you need.
 import { addDays, addMonths } from 'js-date-helper';
 ```
 If you use a bundler like Webpack or Rollup it will be able to tree shake the library and only bundle the library methods you use.
+
+# Missing something?
+In case you're missing a feature or some of documentation is unclear, please [create an issue](https://github.com/tbusser/js-date-helper/issues) on Github.
 
 # Contributing
 Contributions are more than welcome. If you want to contribute to this project, please keep the following in mind:
