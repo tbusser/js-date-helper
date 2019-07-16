@@ -1,0 +1,52 @@
+{
+  "name": "js-date-helper",
+  "version": "1.0.0",
+  "description": "A collection of date functions, tree shakable and fully united tested",
+  "repository": "https://github.com/tbusser/js-date-fns",
+  "sideEffects": false,
+  "jsnext:main": "esm/index.js",
+  "main": "index.js",
+  "module": "esm/index.js",
+  "type": "module",
+  "scripts": {
+    "cover": "cross-env NODE_ENV=test nyc mocha ./src/**/*.test.js",
+    "test": "cross-env NODE_ENV=test _mocha --require @babel/register ./src/**/*.test.js"
+  },
+  "nyc": {
+    "exclude": [
+      "src/**/*.test.js"
+    ],
+    "require": [
+      "@babel/register"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  },
+  "keywords": [
+    "js",
+    "date",
+    "es6"
+  ],
+  "author": "Thijs Busser <tbusser@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/node": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/register": "^7.4.4",
+    "@istanbuljs/nyc-config-babel": "^2.1.1",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "babel-plugin-istanbul": "^5.1.4",
+    "chai": "^4.2.0",
+    "core-js": "^3.1.4",
+    "cross-env": "^5.2.0",
+    "mocha": "^6.1.4",
+    "mz": "^2.7.0",
+    "nyc": "^14.1.1"
+  }
+}

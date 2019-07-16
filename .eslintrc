@@ -206,9 +206,15 @@
 	},
 	"overrides": [
 		{
-			"files": "**/test.js",
+			"files": "**/*.test.js",
 			"rules": {
 				"no-unused-expressions": [0]
+			}
+		},
+		{
+			"files": "./scripts/*",
+			"env": {
+				"node": true
 			}
 		}
 	]
