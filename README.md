@@ -1,4 +1,4 @@
-# JavaScript Date Helpers [![Build Status](https://travis-ci.com/tbusser/js-date-fns.svg?branch=develop)](https://travis-ci.com/tbusser/js-date-fns)
+# JavaScript Date Helpers [![Build Status](https://travis-ci.com/tbusser/js-date-helper.svg?branch=develop)](https://travis-ci.com/tbusser/js-date-helper)[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftbusser%2Fjs-date-helper.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftbusser%2Fjs-date-helper?ref=badge_shield)
 
 A lightweight, tree shakable, and tested JavaScript library for working with dates.
 
