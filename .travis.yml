@@ -12,6 +12,7 @@ jobs:
       node_js: "lts/*"
       script:
         - npm test
+        - npm run docs
         - ./scripts/build.sh
       before_deploy:
         - |
@@ -24,10 +25,18 @@ jobs:
           }
         - cd ./dist
       deploy:
-        provider: npm
-        email: "$NPM_EMAIL"
-        api_key: "$NPM_TOKEN"
-        skip_cleanup: true
-        tag: $(npm_dist_tag)
-        on:
-          tags: true
+        - provider: npm
+          email: "$NPM_EMAIL"
+          api_key: "$NPM_TOKEN"
+          skip_cleanup: true
+          tag: $(npm_dist_tag)
+          on:
+            tags: true
+        - provider: pages
+          skip_cleanup: true
+          github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+          keep_history: true
+          local_dir: ./docs
+          on:
+            tags: true
+            branch: master
