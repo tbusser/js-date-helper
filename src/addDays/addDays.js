@@ -10,17 +10,27 @@ import isDateLike from '../_lib/isDateLike/isDateLike';
 	EXPORTS
 \* ========================================================================== */
 /**
- * Returns a new Date instance with a date the specified number of days from the
- * provided date.
+ * Adds, or subtracts, the specified number of days from the provided date.
  *
  * @param {Date|number} date The date to modify.
- * @param {number} days The number of days to move from the provided date.
+ * @param {number} days The number of days to move from the provided date. A
+ *        negative number will return a date before the provided date.
  *
- * @returns {Date} The result is a new Date instance the specified number of
+ * @returns {Date} Returns a new Date instance the specified number of
  *          days from the provided date.
  *
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
+ *
+ * @example
+ * // Adds 5 days to January 1, 2019
+ * addDays(new Date(2019, 0, 1), 5)
+ * // => Returns Sunday, January 6, 2019
+ *
+ * @example
+ * // Counts back 5 days from January 1, 2019
+ * addDays(new Date(2019, 0, 1), -5)
+ * // => Returns Thursday, December 27, 2018
  */
 export default function addDays(date, days) {
 	if (!isDateLike(date)) {

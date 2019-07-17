@@ -24,7 +24,7 @@ import removeTime from '../removeTime/removeTime.js';
  * @param {Date|number} date The date for which to return the first day of
  *       the week.
  * @param {number} [firstWeekDay=1] Optional parameter to specify on which day
- *        a week starts. By default this will be Monday.
+ *        a week starts. By default this will be 1 (Monday).
  *
  * @returns {Date} Returns a new Date instance with the date of the first day of
  *          the week at midnight.
@@ -33,6 +33,17 @@ import removeTime from '../removeTime/removeTime.js';
  *         type Date or Number.
  * @throws {RangeError} A RangeError is thrown when the firstWeekDay is not a
  *         valid day of the week.
+ *
+ * @example
+ * // Returns the first day of the week in which January 10, 2019 falls
+ * getFirstDayOfWeek(new Date(2019, 0, 10))
+ * // => Returns Monday, January 7, 2019
+ *
+ * @example
+ * // Returns the first day of the week in which January 10, 2019 falls for a
+ * // locale where the week starts on Sunday (0)
+ * getFirstDayOfWeek(new Date(2019, 0, 10), 0)
+ * // => Returns Sunday, January 6, 2019
  */
 export default function getFirstDayOfWeek(date, firstWeekDay = dayOfWeek.monday) {
 	if (!isDateLike(date)) {

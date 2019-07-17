@@ -16,12 +16,12 @@ import isLater from '../isLater/isLater.js';
  *        range of dates.
  * @param {Date|number} minDate The minimum date to compare against.
  * @param {Date|number} maxDate The maximum date to compare against.
- * @param {boolean} [isMinMaxExclusive=true] Optional parameter to specify
+ * @param {boolean} [isMinMaxInclusive=true] Optional parameter to specify
  *        whether the min and max dates are considered a valid date. By default
  *        this is true, the min and max date itself are considered to be valid.
  *
- * @returns {boolean} Returns true when the provided as after the min date and
- *          before the max date.
+ * @returns {boolean} Returns true when the provided date is after the min date
+ *          and before the max date.
  *
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.

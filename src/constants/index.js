@@ -1,5 +1,7 @@
 /**
  * A mapping to go from a day name to the matching JS ordinal.
+ *
+ * @private
  */
 export const dayOfWeek = Object.freeze({
 	sunday: 0,
