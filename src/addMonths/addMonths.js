@@ -44,7 +44,7 @@ export default function addMonths(date, months) {
 		throw new TypeError(dateLikeTypeError());
 	}
 	if (!Number.isInteger(months)) {
-		throw new TypeError(integerTypeError(months));
+		throw new TypeError(integerTypeError('months'));
 	}
 
 	const

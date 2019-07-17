@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - @since JSDoc tags to all library methods
 - method `addYears`
 
+### Fixed
+- Fixed the exception message for an invalid month argument for the addMonths method
+
 ## [1.0.5] - 2019-07-17
 
 ### Added
@@ -27,7 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Ignore the docs folder
 
 ### Fixed
-- There was an error in the script generating the index.js, it was referencing the old file names from before the current naming scheme.
+- There was an error in the script generating the index.js, it was referencing the old file names from before the current naming scheme
 
 [Unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.0.5...HEAD
 [1.0.5]: https://github.com/tbusser/js-date-helper/compare/v1.0.4...v1.0.5
