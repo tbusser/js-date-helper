@@ -33,7 +33,7 @@ import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages';
  * isSameMonthAndYear(new Date(2019, 0, 1), new Date(2020, 0, 1))
  * // => Returns false
  */
-export default function isSameMonth(date, otherDate) {
+export default function isSameMonthAndYear(date, otherDate) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
