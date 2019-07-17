@@ -10,6 +10,8 @@
  * @returns {boolean} Returns true when the provided value is a Date instance
  *          with a valid date.
  *
+ * @since v1.0.0
+ *
  * @example
  * // For a Date instance with a valid date
  * isValidDate(new Date())

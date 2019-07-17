@@ -24,6 +24,8 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
  *
+ * @since v1.0.0
+ *
  * @example
  * // Tests if January 2019 is later than January 2018
  * isLater(new Date(2018, 0, 1), new Date(2019, 0, 1));

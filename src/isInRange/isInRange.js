@@ -25,6 +25,8 @@ import isLater from '../isLater/isLater.js';
  *
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
+ *
+ * @since v1.0.0
  */
 export default function isInRange(date, minDate, maxDate, isMinMaxInclusive = true) {
 	const

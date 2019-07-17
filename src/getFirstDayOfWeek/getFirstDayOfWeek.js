@@ -34,6 +34,8 @@ import removeTime from '../removeTime/removeTime.js';
  * @throws {RangeError} A RangeError is thrown when the firstWeekDay is not a
  *         valid day of the week.
  *
+ * @since v1.0.0
+ *
  * @example
  * // Returns the first day of the week in which January 10, 2019 falls
  * getFirstDayOfWeek(new Date(2019, 0, 10))

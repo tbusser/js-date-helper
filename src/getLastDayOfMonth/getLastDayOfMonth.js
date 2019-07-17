@@ -24,6 +24,8 @@ import removeTime from '../removeTime/removeTime.js';
  * @throws {TypeError} A TypeError is thrown when the provided value is not of
  *         type Date or Number.
  *
+ * @since v1.0.0
+ *
  * @example
  * // Returns the last day of January 2019
  * getLastDayOfMonth(new Date(2019, 0, 10, 10, 11, 12));

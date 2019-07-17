@@ -22,6 +22,8 @@ import isDateLike from '../_lib/isDateLike/isDateLike';
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
  *
+ * @since v1.0.0
+ *
  * @example
  * // Adds 5 days to January 1, 2019
  * addDays(new Date(2019, 0, 1), 5)

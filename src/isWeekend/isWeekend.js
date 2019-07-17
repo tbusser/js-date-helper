@@ -24,6 +24,8 @@ import { defaultWeekend } from '../constants/index.js';
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
  *
+ * @since v1.0.0
+ *
  * @example
  * // Checks if Friday, January 4, 2019 falls on the weekend.
  * isWeekend(new Date(2019, 0, 4))

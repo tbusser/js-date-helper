@@ -25,6 +25,8 @@ import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages.js';
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
  *
+ * @since v1.0.0
+ *
  * @example
  * // Tests if January 2018 is earlier than January 2019
  * isEarlier(new Date(2018, 0, 1), new Date(2019, 0, 1));

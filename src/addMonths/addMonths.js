@@ -27,6 +27,8 @@ import getLastDayOfMonth from '../getLastDayOfMonth/getLastDayOfMonth.js';
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
  *
+ * @since v1.0.0
+ *
  * @example
  * // Add 1 month to January 5, 2019
  * addMonths(new Date(2019, 0, 5), 1);

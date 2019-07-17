@@ -21,6 +21,8 @@ import isDateLike from '../_lib/isDateLike/isDateLike';
  * @throws {TypeError} A TypeError is thrown when the provided value is not of
  *         type Date or Number.
  *
+ * @since v1.0.0
+ *
  * @example
  * // Returns a date instance with the time set to midnight for Tuesday,
  * // January 1, 2019 at 10:11:12.13
