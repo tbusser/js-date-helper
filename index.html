@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'>
-  <title>js-date-helper 1.0.4 | Documentation</title>
+  <title>js-date-helper 1.0.5 | Documentation</title>
   <meta name='description' content='A collection of date functions, tree shakable and fully united tested'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>js-date-helper</h3>
-          <div class='mb1'><code>1.0.4</code></div>
+          <div class='mb1'><code>1.0.5</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -779,6 +779,14 @@ type Date or Number.
   
 
   
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Returns the last day of January 2019</span>
+getLastDayOfMonth(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>));
+<span class="hljs-comment">// =&gt; Returns Thursday, January 31, 2019 at 00:00:00</span></pre>
+    
+  
 
   
 
@@ -874,6 +882,20 @@ valid day of the week.
     </ul>
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Returns the last day of the week in which January 10, 2019 falls</span>
+getLastDayOfWeek(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>))
+<span class="hljs-comment">// =&gt; Returns Sunday, January 13, 2019</span></pre>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Returns the last day of the week in which January 10, 2019 falls for a</span>
+<span class="hljs-comment">// locale where the week starts on Sunday (0)</span>
+getLastDayOfWeek(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>), <span class="hljs-number">0</span>)
+<span class="hljs-comment">// =&gt; Returns Saturday, January 12, 2019</span></pre>
+    
   
 
   
@@ -980,11 +1002,19 @@ the expected type.
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// This wil return true</span>
-  <span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>);
-  isEarlier(date, date);
-  <span class="hljs-comment">// This will return false</span>
-  isEarlier(date, date, <span class="hljs-literal">false</span>);</pre>
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Tests if January 2018 is earlier than January 2019</span>
+isEarlier(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2018</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>), <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>));
+<span class="hljs-comment">// =&gt; Returns true, January 2018 is earlier.</span></pre>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Tests if date is earlier to itself, by default this is true</span>
+isEarlier(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>), <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>));
+<span class="hljs-comment">// =&gt; Returns true, January 2019 is earlier/equal to itself.</span></pre>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Tests if date is earlier to itself but exclude the max date itself.</span>
+isEarlier(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>), <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>), <span class="hljs-literal">false</span>);
+<span class="hljs-comment">// =&gt; Returns false, January 2019 is not earlier than itself.</span></pre>
     
   
 
@@ -1202,11 +1232,19 @@ the expected type.
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// This wil return true</span>
-  <span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>);
-  isLater(date, date);
-  <span class="hljs-comment">// This will return false</span>
-  isLater(date, date, <span class="hljs-literal">false</span>);</pre>
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Tests if January 2019 is later than January 2018</span>
+isLater(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2018</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>), <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>));
+<span class="hljs-comment">// =&gt; Returns true, January 2019 is later.</span></pre>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Tests if date is later to itself, by default this is true</span>
+isLater(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>), <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>));
+<span class="hljs-comment">// =&gt; Returns true, January 2019 is later/equal to itself.</span></pre>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Tests if date is later to itself but exclude the min date itself.</span>
+isLater(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>), <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>), <span class="hljs-literal">false</span>);
+<span class="hljs-comment">// =&gt; Returns false, January 2019 is not later than itself.</span></pre>
     
   
 
@@ -1290,6 +1328,14 @@ the expected type.
   
 
   
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Tests if a date instance is for today</span>
+isToday(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>())
+<span class="hljs-comment">// =&gt; Returns true, by default a new Date instance is for today.</span></pre>
+    
+  
 
   
 
@@ -1352,8 +1398,8 @@ valid date.</p>
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        Returns true when the provided object represents a
-valid date.
+        Returns true when the provided value is a Date instance
+with a valid date.
 
       
     
@@ -1361,6 +1407,24 @@ valid date.
 
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// For a Date instance with a valid date</span>
+isValidDate(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>())
+<span class="hljs-comment">// =&gt; Returns true</span></pre>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// For a Date instance with a invalid date</span>
+isValidDate(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'foo'</span>))
+<span class="hljs-comment">// =&gt; Returns false</span></pre>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// For a valid timestamp</span>
+isValidDate(<span class="hljs-number">1563362089032</span>)
+<span class="hljs-comment">// =&gt; Returns false, while a valid timestamp it is not an instance of Date.</span></pre>
+    
   
 
   
@@ -1417,9 +1481,12 @@ valid date.
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>weekendDays</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>
-            = <code>[number]</code>)</code>
-	    The days of the week which
-make up the weekend. By default this will be Saturday and Sunday.
+            = <code>[0,6]</code>)</code>
+	    Optional parameter to specify the
+days of the week which make up the weekend. By default this will be
+
+[0, 6]
+ (Saturday and Sunday).
 
           </div>
           
@@ -1451,6 +1518,20 @@ the expected type.
     </ul>
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Checks if Friday, January 4, 2019 falls on the weekend.</span>
+isWeekend(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>))
+<span class="hljs-comment">// =&gt; Returns false as by default the weekend is Saturday and Sunday.</span></pre>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Checks if Friday, January 4, 2019 is part of the weekend for a locale</span>
+<span class="hljs-comment">// where the weekend falls on Friday and Saturday.</span>
+isWeekend(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>), [<span class="hljs-number">5</span>, <span class="hljs-number">6</span>])
+<span class="hljs-comment">// =&gt; Returns true</span></pre>
+    
   
 
   
@@ -1532,6 +1613,15 @@ type Date or Number.
     </ul>
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Returns a date instance with the time set to midnight for Tuesday,</span>
+<span class="hljs-comment">// January 1, 2019 at 10:11:12.13</span>
+removeTime(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>, <span class="hljs-number">13</span>))
+<span class="hljs-comment">// =&gt; Returns January 1, 2019 at 00:00:00.000</span></pre>
+    
   
 
   
