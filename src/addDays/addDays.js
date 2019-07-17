@@ -27,12 +27,12 @@ import isDateLike from '../_lib/isDateLike/isDateLike';
  * @example
  * // Adds 5 days to January 1, 2019
  * addDays(new Date(2019, 0, 1), 5)
- * // => Returns Sunday, January 6, 2019
+ * // -> Returns Sunday, January 6, 2019
  *
  * @example
  * // Counts back 5 days from January 1, 2019
  * addDays(new Date(2019, 0, 1), -5)
- * // => Returns Thursday, December 27, 2018
+ * // -> Returns Thursday, December 27, 2018
  */
 export default function addDays(date, days) {
 	if (!isDateLike(date)) {

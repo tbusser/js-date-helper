@@ -28,12 +28,12 @@ import addMonths from '../addMonths/addMonths';
  * @example
  * // Adds 5 years to January 1, 2019
  * addYears(new Date(2019, 0, 1), 5)
- * // => Returns Monday, January 1, 2024
+ * // -> Returns Monday, January 1, 2024
  *
  * @example
  * // Counts back 5 days from January 1, 2019
  * addYears(new Date(2019, 0, 1), -5)
- * // => Returns Wednesday, December 27, 2014
+ * // -> Returns Wednesday, December 27, 2014
  */
 export default function addYears(date, years) {
 	if (!isDateLike(date)) {

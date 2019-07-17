@@ -28,7 +28,7 @@ import removeTime from '../removeTime/removeTime.js';
  * @example
  * // Tests if a date instance is for today
  * isToday(new Date())
- * // => Returns true, by default a new Date instance is for today.
+ * // -> Returns true, by default a new Date instance is for today.
  */
 export default function isToday(date) {
 	if (!isDateLike(date)) {

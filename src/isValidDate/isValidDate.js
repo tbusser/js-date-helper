@@ -15,17 +15,17 @@
  * @example
  * // For a Date instance with a valid date
  * isValidDate(new Date())
- * // => Returns true
+ * // -> Returns true
  *
  * @example
  * // For a Date instance with a invalid date
  * isValidDate(new Date('foo'))
- * // => Returns false
+ * // -> Returns false
  *
  * @example
  * // For a valid timestamp
  * isValidDate(1563362089032)
- * // => Returns false, while a valid timestamp it is not an instance of Date.
+ * // -> Returns false, while a valid timestamp it is not an instance of Date.
  */
 export default function isValidDate(value) {
 	// When the test passes, value is an instance of Date. Check to make sure

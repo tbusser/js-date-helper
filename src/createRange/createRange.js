@@ -30,7 +30,7 @@ import addDays from '../addDays/addDays.js';
  * @example
  * // Create a range with 3 dates, starting at January 1, 2019
  * createRange(new Date(2019, 0, 1), 3)
- * // => Returns [
+ * // -> Returns [
  * //     Tuesday, January 1, 2019
  * //     Wednesday, January 2, 2019
  * //     Thursday, January 3, 2019
@@ -39,7 +39,7 @@ import addDays from '../addDays/addDays.js';
  * @example
  * // Create a range with 3 dates, ending at January 1, 2019
  * createRange(new Date(2019, 0, 1), -3)
- * // => Returns [
+ * // -> Returns [
  * //     Sunday, December 30, 2018
  * //     Monday, December 31, 2018
  * //     Tuesday, January 1, 2019

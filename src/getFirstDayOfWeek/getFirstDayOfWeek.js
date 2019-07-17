@@ -39,13 +39,13 @@ import removeTime from '../removeTime/removeTime.js';
  * @example
  * // Returns the first day of the week in which January 10, 2019 falls
  * getFirstDayOfWeek(new Date(2019, 0, 10))
- * // => Returns Monday, January 7, 2019
+ * // -> Returns Monday, January 7, 2019
  *
  * @example
  * // Returns the first day of the week in which January 10, 2019 falls for a
  * // locale where the week starts on Sunday (0)
  * getFirstDayOfWeek(new Date(2019, 0, 10), 0)
- * // => Returns Sunday, January 6, 2019
+ * // -> Returns Sunday, January 6, 2019
  */
 export default function getFirstDayOfWeek(date, firstWeekDay = dayOfWeek.monday) {
 	if (!isDateLike(date)) {

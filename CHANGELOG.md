@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - method `addYears`
 - method `isSameMonthAndYear`
 
+### Changed
+- Replaced "=>" in the JSDoc examples with "->" to avoid confusion with the fat arrow methods.
+
 ### Fixed
 - Fixed the exception message for an invalid month argument for the addMonths method
 

@@ -29,13 +29,13 @@ import { defaultWeekend } from '../constants/index.js';
  * @example
  * // Checks if Friday, January 4, 2019 falls on the weekend.
  * isWeekend(new Date(2019, 0, 4))
- * // => Returns false as by default the weekend is Saturday and Sunday.
+ * // -> Returns false as by default the weekend is Saturday and Sunday.
  *
  * @example
  * // Checks if Friday, January 4, 2019 is part of the weekend for a locale
  * // where the weekend falls on Friday and Saturday.
  * isWeekend(new Date(2019, 0, 4), [5, 6])
- * // => Returns true
+ * // -> Returns true
  */
 export default function isWeekend(date, weekendDays = defaultWeekend) {
 	if (!isDateLike(date)) {

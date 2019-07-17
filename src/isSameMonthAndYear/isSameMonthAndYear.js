@@ -26,12 +26,12 @@ import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages';
  * @example
  * // Check if January 1, 2019 and January 20, 2019 fall in the same month
  * isSameMonthAndYear(new Date(2019, 0, 1), new Date(2019, 0, 20))
- * // => Returns true
+ * // -> Returns true
  *
  * @example
  * // Check if January 1 in 2019 and 2020 fall in the same month
  * isSameMonthAndYear(new Date(2019, 0, 1), new Date(2020, 0, 1))
- * // => Returns false
+ * // -> Returns false
  */
 export default function isSameMonthAndYear(date, otherDate) {
 	if (!isDateLike(date)) {
