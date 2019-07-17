@@ -20,7 +20,7 @@ const
  */
 function generateImports() {
 	const
-		imports = listSubmodules().map(submodule => `export { default as ${ submodule.name } } from '${ submodule.path }/index.js'`);
+		imports = listSubmodules().map(submodule => `export { default as ${ submodule.name } } from '${ submodule.path }/${ submodule.name }.js'`);
 
 	return imports.join('\n');
 }

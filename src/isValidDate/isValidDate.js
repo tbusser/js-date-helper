@@ -7,8 +7,23 @@
  *
  * @param {any} value The value to check.
  *
- * @returns {boolean} Returns true when the provided object represents a
- *          valid date.
+ * @returns {boolean} Returns true when the provided value is a Date instance
+ *          with a valid date.
+ *
+ * @example
+ * // For a Date instance with a valid date
+ * isValidDate(new Date())
+ * // => Returns true
+ *
+ * @example
+ * // For a Date instance with a invalid date
+ * isValidDate(new Date('foo'))
+ * // => Returns false
+ *
+ * @example
+ * // For a valid timestamp
+ * isValidDate(1563362089032)
+ * // => Returns false, while a valid timestamp it is not an instance of Date.
  */
 export default function isValidDate(value) {
 	// When the test passes, value is an instance of Date. Check to make sure

@@ -20,6 +20,12 @@ import isDateLike from '../_lib/isDateLike/isDateLike';
  *
  * @throws {TypeError} A TypeError is thrown when the provided value is not of
  *         type Date or Number.
+ *
+ * @example
+ * // Returns a date instance with the time set to midnight for Tuesday,
+ * // January 1, 2019 at 10:11:12.13
+ * removeTime(new Date(2019, 0, 1, 10, 11, 12, 13))
+ * // => Returns January 1, 2019 at 00:00:00.000
  */
 export default function removeTime(date) {
 	if (!isDateLike(date)) {
