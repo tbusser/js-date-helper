@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - @since JSDoc tags to all library methods
 - method `addYears`
+- method `isSameMonthAndYear`
 
 ### Fixed
 - Fixed the exception message for an invalid month argument for the addMonths method
