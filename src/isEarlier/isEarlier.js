@@ -25,20 +25,22 @@ import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages.js';
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
  *
+ * @since v1.0.0
+ *
  * @example
  * // Tests if January 2018 is earlier than January 2019
  * isEarlier(new Date(2018, 0, 1), new Date(2019, 0, 1));
- * // => Returns true, January 2018 is earlier.
+ * // -> Returns true, January 2018 is earlier.
  *
  * @example
  * // Tests if date is earlier to itself, by default this is true
  * isEarlier(new Date(2019, 0, 1), new Date(2019, 0, 1));
- * // => Returns true, January 2019 is earlier/equal to itself.
+ * // -> Returns true, January 2019 is earlier/equal to itself.
  *
  * @example
  * // Tests if date is earlier to itself but exclude the max date itself.
  * isEarlier(new Date(2019, 0, 1), new Date(2019, 0, 1), false);
- * // => Returns false, January 2019 is not earlier than itself.
+ * // -> Returns false, January 2019 is not earlier than itself.
  */
 export default function isEarlier(date, maxDate, isInclusive = true) {
 	if (!isDateLike(date)) {

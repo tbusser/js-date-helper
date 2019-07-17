@@ -34,16 +34,18 @@ import removeTime from '../removeTime/removeTime.js';
  * @throws {RangeError} A RangeError is thrown when the firstWeekDay is not a
  *         valid day of the week.
  *
+ * @since v1.0.0
+ *
  * @example
  * // Returns the last day of the week in which January 10, 2019 falls
  * getLastDayOfWeek(new Date(2019, 0, 10))
- * // => Returns Sunday, January 13, 2019
+ * // -> Returns Sunday, January 13, 2019
  *
  * @example
  * // Returns the last day of the week in which January 10, 2019 falls for a
  * // locale where the week starts on Sunday (0)
  * getLastDayOfWeek(new Date(2019, 0, 10), 0)
- * // => Returns Saturday, January 12, 2019
+ * // -> Returns Saturday, January 12, 2019
  */
 export default function getLastDayOfWeek(date, firstWeekDay = dayOfWeek.monday) {
 	if (!isDateLike(date)) {

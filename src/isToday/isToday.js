@@ -23,10 +23,12 @@ import removeTime from '../removeTime/removeTime.js';
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
  *
+ * @since v1.0.0
+ *
  * @example
  * // Tests if a date instance is for today
  * isToday(new Date())
- * // => Returns true, by default a new Date instance is for today.
+ * // -> Returns true, by default a new Date instance is for today.
  */
 export default function isToday(date) {
 	if (!isDateLike(date)) {

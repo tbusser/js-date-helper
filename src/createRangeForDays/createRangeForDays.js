@@ -27,10 +27,12 @@ import removeTime from '../removeTime/removeTime.js';
  * @throws {RangeError} A RangeError is thrown when the provided end date is
  *         earlier than the start date.
  *
+ * @since v1.0.0
+ *
  * @example
  * // Create a range with 3 dates, starting at January 1, 2019
  * createRangeForDays(new Date(2019, 0, 1), new Date(2019, 0, 3))
- * // => Returns [
+ * // -> Returns [
  * //     Tuesday, January 1, 2019
  * //     Wednesday, January 2, 2019
  * //     Thursday, January 3, 2019
