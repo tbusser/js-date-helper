@@ -25,12 +25,19 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
  *         the expected type.
  *
  * @example
- *   // This wil return true
- *   const date = new Date(2019, 0, 1);
- *   isLater(date, date);
- *   // This will return false
- *   isLater(date, date, false);
- */
+ * // Tests if January 2019 is later than January 2018
+ * isLater(new Date(2018, 0, 1), new Date(2019, 0, 1));
+ * // => Returns true, January 2019 is later.
+ *
+ * @example
+ * // Tests if date is later to itself, by default this is true
+ * isLater(new Date(2019, 0, 1), new Date(2019, 0, 1));
+ * // => Returns true, January 2019 is later/equal to itself.
+ *
+ * @example
+ * // Tests if date is later to itself but exclude the min date itself.
+ * isLater(new Date(2019, 0, 1), new Date(2019, 0, 1), false);
+ * // => Returns false, January 2019 is not later than itself. */
 export default function isLater(date, minDate, isInclusive = true) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());

@@ -26,11 +26,19 @@ import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages.js';
  *         the expected type.
  *
  * @example
- *   // This wil return true
- *   const date = new Date(2019, 0, 1);
- *   isEarlier(date, date);
- *   // This will return false
- *   isEarlier(date, date, false);
+ * // Tests if January 2018 is earlier than January 2019
+ * isEarlier(new Date(2018, 0, 1), new Date(2019, 0, 1));
+ * // => Returns true, January 2018 is earlier.
+ *
+ * @example
+ * // Tests if date is earlier to itself, by default this is true
+ * isEarlier(new Date(2019, 0, 1), new Date(2019, 0, 1));
+ * // => Returns true, January 2019 is earlier/equal to itself.
+ *
+ * @example
+ * // Tests if date is earlier to itself but exclude the max date itself.
+ * isEarlier(new Date(2019, 0, 1), new Date(2019, 0, 1), false);
+ * // => Returns false, January 2019 is not earlier than itself.
  */
 export default function isEarlier(date, maxDate, isInclusive = true) {
 	if (!isDateLike(date)) {
