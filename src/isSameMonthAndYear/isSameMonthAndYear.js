@@ -21,7 +21,7 @@ import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages';
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
  *
- * @since {next}
+ * @since v1.1.0
  *
  * @example
  * // Check if January 1, 2019 and January 20, 2019 fall in the same month

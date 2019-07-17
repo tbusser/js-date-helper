@@ -23,7 +23,7 @@ import addMonths from '../addMonths/addMonths';
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
  *
- * @since {next}
+ * @since v1.1.0
  *
  * @example
  * // Adds 5 years to January 1, 2019
