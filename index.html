@@ -46,16 +46,6 @@
               
                 
                 <li><a
-                  href='#dayofweek'
-                  class="">
-                  dayOfWeek
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
                   href='#createrange'
                   class="">
                   createRange
@@ -174,16 +164,6 @@
                 
                 </li>
               
-                
-                <li><a
-                  href='#createtestdate'
-                  class="">
-                  createTestDate
-                  
-                </a>
-                
-                </li>
-              
             </ul>
           </div>
           <div class='mt1 h6 quiet'>
@@ -207,8 +187,7 @@
   </div>
   
 
-  <p>Returns a new Date instance with a date the specified number of days from the
-provided date.</p>
+  <p>Adds, or subtracts, the specified number of days from the provided date.</p>
 
     <div class='pre p1 fill-light mt0'>addDays(date: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>), days: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></div>
   
@@ -237,7 +216,8 @@ provided date.</p>
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>days</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
-	    The number of days to move from the provided date.
+	    The number of days to move from the provided date. A
+negative number will return a date before the provided date.
 
           </div>
           
@@ -252,7 +232,7 @@ provided date.</p>
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></code>:
-        The result is a new Date instance the specified number of
+        Returns a new Date instance the specified number of
 days from the provided date.
 
       
@@ -270,6 +250,19 @@ the expected type.
     </ul>
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Adds 5 days to January 1, 2019</span>
+addDays(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>), <span class="hljs-number">5</span>)
+<span class="hljs-comment">// =&gt; Returns Sunday, January 6, 2019</span></pre>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Counts back 5 days from January 1, 2019</span>
+addDays(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>), <span class="hljs-number">-5</span>)
+<span class="hljs-comment">// =&gt; Returns Thursday, December 27, 2018</span></pre>
+    
   
 
   
@@ -297,9 +290,10 @@ the expected type.
   </div>
   
 
-  <p>Returns a new Date instance with a date the specified number of months from
-the provided date. The day of the month (DotM) will be the last day of the
-month in case the original DotM doesn't exist in the result month.</p>
+  <p>Adds, or subtracts, the given number of months from the provided date. In
+case the original date of the month doesn't occur in the result month, the
+day of the month will be set to the last day in the result month.
+IE: Add 1 month to Jan 31 will result in Feb 28.</p>
 
     <div class='pre p1 fill-light mt0'>addMonths(date: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>), months: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></div>
   
@@ -329,6 +323,7 @@ month in case the original DotM doesn't exist in the result month.</p>
           <div>
             <span class='code bold'>months</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    The number of months to move from the provided date.
+A negative number will return a date before the provided date.
 
           </div>
           
@@ -365,58 +360,15 @@ the expected type.
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Add 1 month to January 5, 2019</span>
+addMonths(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>), <span class="hljs-number">1</span>);
+<span class="hljs-comment">// =&gt; Returns Thursday, Thursday, February 5, 2019</span></pre>
+    
+      
       <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Add 1 month to January 31, 2019</span>
 addMonths(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">31</span>), <span class="hljs-number">1</span>);
-<span class="hljs-comment">// =&gt; February 28, 2019</span></pre>
+<span class="hljs-comment">// =&gt; Returns Thursday, February 28, 2019 because there is no February 31.</span></pre>
     
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='dayofweek'>
-      dayOfWeek
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>A mapping to go from a day name to the matching JS ordinal.</p>
-
-    <div class='pre p1 fill-light mt0'>dayOfWeek</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
   
 
   
@@ -508,6 +460,27 @@ type Date or Number.
     </ul>
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Create a range with 3 dates, starting at January 1, 2019</span>
+createRange(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>), <span class="hljs-number">3</span>)
+<span class="hljs-comment">// =&gt; Returns [</span>
+<span class="hljs-comment">//     Tuesday, January 1, 2019</span>
+<span class="hljs-comment">//     Wednesday, January 2, 2019</span>
+<span class="hljs-comment">//     Thursday, January 3, 2019</span>
+<span class="hljs-comment">// ]</span></pre>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Create a range with 3 dates, ending at January 1, 2019</span>
+createRange(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>), <span class="hljs-number">-3</span>)
+<span class="hljs-comment">// =&gt; Returns [</span>
+<span class="hljs-comment">//     Sunday, December 30, 2018</span>
+<span class="hljs-comment">//     Monday, December 31, 2018</span>
+<span class="hljs-comment">//     Tuesday, January 1, 2019</span>
+<span class="hljs-comment">// ]</span></pre>
+    
   
 
   
@@ -602,6 +575,18 @@ earlier than the start date.
   
 
   
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Create a range with 3 dates, starting at January 1, 2019</span>
+createRangeForDays(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>), <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>))
+<span class="hljs-comment">// =&gt; Returns [</span>
+<span class="hljs-comment">//     Tuesday, January 1, 2019</span>
+<span class="hljs-comment">//     Wednesday, January 2, 2019</span>
+<span class="hljs-comment">//     Thursday, January 3, 2019</span>
+<span class="hljs-comment">// ]</span></pre>
+    
+  
 
   
 
@@ -660,7 +645,7 @@ the week.
             <span class='code bold'>firstWeekDay</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
             = <code>1</code>)</code>
 	    Optional parameter to specify on which day
-a week starts. By default this will be Monday.
+a week starts. By default this will be 1 (Monday).
 
           </div>
           
@@ -697,6 +682,20 @@ valid day of the week.
     </ul>
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Returns the first day of the week in which January 10, 2019 falls</span>
+getFirstDayOfWeek(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>))
+<span class="hljs-comment">// =&gt; Returns Monday, January 7, 2019</span></pre>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Returns the first day of the week in which January 10, 2019 falls for a</span>
+<span class="hljs-comment">// locale where the week starts on Sunday (0)</span>
+getFirstDayOfWeek(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>), <span class="hljs-number">0</span>)
+<span class="hljs-comment">// =&gt; Returns Sunday, January 6, 2019</span></pre>
+    
   
 
   
@@ -1016,7 +1015,7 @@ the expected type.
 
   <p>Tests if a date is between two other dates.</p>
 
-    <div class='pre p1 fill-light mt0'>isInRange(date: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>), minDate: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>), maxDate: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>), isMinMaxInclusive: any, isMinMaxExclusive: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
+    <div class='pre p1 fill-light mt0'>isInRange(date: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>), minDate: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>), maxDate: (<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>), isMinMaxInclusive: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></div>
   
   
 
@@ -1061,16 +1060,7 @@ range of dates.
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>isMinMaxInclusive</span> <code class='quiet'>(any
-            = <code>true</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>isMinMaxExclusive</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
+            <span class='code bold'>isMinMaxInclusive</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
             = <code>true</code>)</code>
 	    Optional parameter to specify
 whether the min and max dates are considered a valid date. By default
@@ -1089,8 +1079,8 @@ this is true, the min and max date itself are considered to be valid.
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></code>:
-        Returns true when the provided as after the min date and
-before the max date.
+        Returns true when the provided date is after the min date
+and before the max date.
 
       
     
@@ -1540,53 +1530,6 @@ type Date or Number.
 </li>
       
     </ul>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='createtestdate'>
-      createTestDate
-    </h3>
-    
-    
-  </div>
-  
-
-  
-    <div class='pre p1 fill-light mt0'>createTestDate()</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
   
 
   
