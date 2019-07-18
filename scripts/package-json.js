@@ -64,7 +64,7 @@ function createEsmEntries() {
  */
 function getInitialPackages() {
 	return listSubmodules().reduce((modulesByPath, module) => {
-		modulesByPath[module.fullPath] = getModulePackage(module.fullPath);
+		modulesByPath[module.fullPath] = getModulePackage(module);
 
 		return modulesByPath;
 	}, {});
@@ -74,11 +74,11 @@ function getInitialPackages() {
  *
  * @param {*} fullPath
  */
-function getModulePackage(fullPath) {
+function getModulePackage(module) {
 	const
-		dirPath = path.dirname(fullPath),
+		dirPath = path.dirname(module.fullPath),
 		subPath = dirPath.match(/^\.\/src\/(.+)$/)[1],
-		esmRelativePath = path.relative(dirPath, `./src/esm/${subPath}/index.js`);
+		esmRelativePath = path.relative(dirPath, `./src/esm/${subPath}/${ module.name }.js`);
 
 	return {
 		module: esmRelativePath
