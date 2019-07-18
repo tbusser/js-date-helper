@@ -10,13 +10,10 @@ const fs = require('fs');
 	PRIVATE VARIABLES
 \* ========================================================================== */
 const ignoredFiles = [
-	'locale',
 	'esm',
-	'fp',
 	'constants',
 	'index.js',
 	'test.js',
-	'index.js.flow',
 	'package.json'
 ];
 
@@ -33,11 +30,13 @@ function listSubmodules() {
 		files = fs.readdirSync(path.join(process.cwd(), 'src'));
 
 	return files
-		.filter(file => /^[^._]/.test(file) && !ignoredFiles.includes(file))
+		.filter(file => {
+			return /^[^._]/.test(file) && !ignoredFiles.includes(file)
+		})
 		.map(file => ({
 			name: file,
 			path: `./${file}`,
-			fullPath: `./src/${file}/index.js`
+			fullPath: `./src/${file}/${file}.js`
 		}));
 }
 
