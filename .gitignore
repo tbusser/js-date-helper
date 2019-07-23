@@ -1,5 +1,5 @@
 .nyc_output/**
 coverage/**
 dist/**
-index.js
+src/index.js
 docs
