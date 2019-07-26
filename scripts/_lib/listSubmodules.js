@@ -14,7 +14,8 @@ const ignoredFiles = [
 	'constants',
 	'index.js',
 	'test.js',
-	'package.json'
+	'package.json',
+	'typeDefs'
 ];
 
 
