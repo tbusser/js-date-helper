@@ -77,7 +77,7 @@ function convertMilliseconds(milliseconds, resolution) {
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
  *
- * @since {next}
+ * @since v1.2.0
  *
  * @example
  * // Get the time span between January 1, 2019 at 00:00:00.000 and
