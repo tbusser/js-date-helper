@@ -4,16 +4,8 @@ import getTimeSpanInMinutes from './getTimeSpanInMinutes.js';
 const
 	firstDate = new Date(2019, 0, 1, 0, 1, 0, 0),
 	secondDate = new Date(2019, 0, 1, 0, 2, 45, 0),
-	configNotRounded = {
-		rounded: false
-	},
-	configRoundedNotAbsolute = {
-		absolute: false,
-		rounded: true
-	},
-	configRounded = {
-		rounded: true
-	};
+	result = 1.75,
+	roundedResult = 1;
 
 describe('getTimeSpanInMinutes', () => {
 	it('should accept Date instances and timestamps', () => {
@@ -28,15 +20,19 @@ describe('getTimeSpanInMinutes', () => {
 		expect(() => getTimeSpanInMinutes(firstDate, 'a')).to.throw(TypeError);
 	});
 
-	it('should return the time span as a float', () => {
-		expect(getTimeSpanInMinutes(secondDate, firstDate, configNotRounded)).to.equal(1.75);
-		expect(getTimeSpanInMinutes(firstDate, secondDate, configNotRounded)).to.equal(1.75);
+	it('should return the difference between the input in minutes', () => {
+		expect(getTimeSpanInMinutes(firstDate, secondDate)).to.equal(roundedResult);
+		expect(getTimeSpanInMinutes(secondDate, firstDate)).to.equal(roundedResult);
 	});
 
-	it('should return the time span as an integer', () => {
-		expect(getTimeSpanInMinutes(secondDate, firstDate, configRounded)).to.equal(1);
-		expect(getTimeSpanInMinutes(firstDate, secondDate, configRounded)).to.equal(1);
-		expect(getTimeSpanInMinutes(secondDate, firstDate, configRoundedNotAbsolute)).to.equal(1);
-		expect(getTimeSpanInMinutes(firstDate, secondDate, configRoundedNotAbsolute)).to.equal(-1);
+	it('should respect the provided options to shape the output', () => {
+		expect(getTimeSpanInMinutes(firstDate, secondDate, { absolute: false })).to.equal(-roundedResult);
+		expect(getTimeSpanInMinutes(secondDate, firstDate, { absolute: false })).to.equal(roundedResult);
+		expect(getTimeSpanInMinutes(firstDate, secondDate, { rounded: false })).to.equal(result);
+		expect(getTimeSpanInMinutes(secondDate, firstDate, { rounded: false })).to.equal(result);
+		// eslint-disable-next-line object-property-newline
+		expect(getTimeSpanInMinutes(firstDate, secondDate, { absolute: false, rounded: false })).to.equal(-result);
+		// eslint-disable-next-line object-property-newline
+		expect(getTimeSpanInMinutes(secondDate, firstDate, { absolute: false, rounded: false })).to.equal(result);
 	});
 });

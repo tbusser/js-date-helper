@@ -3,7 +3,9 @@ import getTimeSpanInDays from './getTimeSpanInDays.js';
 
 const
 	firstDate  = new Date(2019, 0, 1,  0, 0, 0, 0),
-	secondDate = new Date(2019, 0, 2, 12, 0, 0, 0);
+	secondDate = new Date(2019, 0, 2, 12, 0, 0, 0),
+	result = 1.5,
+	roundedResult = 1;
 
 describe('getTimeSpanInDays', () => {
 	it('should accept Date instances and timestamps', () => {
@@ -18,13 +20,19 @@ describe('getTimeSpanInDays', () => {
 		expect(() => getTimeSpanInDays(firstDate, 'a')).to.throw(TypeError);
 	});
 
-	it('should calculate the difference between days in calendar days', () => {
-		expect(getTimeSpanInDays(firstDate, secondDate)).to.equal(1);
+	it('should return the difference between the input in days', () => {
+		expect(getTimeSpanInDays(firstDate, secondDate)).to.equal(roundedResult);
+		expect(getTimeSpanInDays(secondDate, firstDate)).to.equal(roundedResult);
 	});
 
 	it('should respect the provided options to shape the output', () => {
-		expect(getTimeSpanInDays(firstDate, secondDate, { absolute: true })).to.equal(1);
-		expect(getTimeSpanInDays(firstDate, secondDate, { absolute: false })).to.equal(-1);
-		expect(getTimeSpanInDays(firstDate, secondDate, { rounded: false })).to.equal(1.5);
+		expect(getTimeSpanInDays(firstDate, secondDate, { absolute: false })).to.equal(-roundedResult);
+		expect(getTimeSpanInDays(secondDate, firstDate, { absolute: false })).to.equal(roundedResult);
+		expect(getTimeSpanInDays(firstDate, secondDate, { rounded: false })).to.equal(result);
+		expect(getTimeSpanInDays(secondDate, firstDate, { rounded: false })).to.equal(result);
+		// eslint-disable-next-line object-property-newline
+		expect(getTimeSpanInDays(firstDate, secondDate, { absolute: false, rounded: false })).to.equal(-result);
+		// eslint-disable-next-line object-property-newline
+		expect(getTimeSpanInDays(secondDate, firstDate, { absolute: false, rounded: false })).to.equal(result);
 	});
 });
