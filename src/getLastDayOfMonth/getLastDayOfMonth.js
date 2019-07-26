@@ -9,7 +9,7 @@ import removeTime from '../removeTime/removeTime.js';
 
 
 /* ========================================================================== *\
-    EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Returns the date of the last day of the month in which the provided
@@ -31,7 +31,7 @@ import removeTime from '../removeTime/removeTime.js';
  * getLastDayOfMonth(new Date(2019, 0, 10, 10, 11, 12));
  * // -> Returns Thursday, January 31, 2019 at 00:00:00
  */
-export default function getLastDayOfMonth(date) {
+function getLastDayOfMonth(date) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -50,3 +50,10 @@ export default function getLastDayOfMonth(date) {
 
 	return removeTime(result);
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default getLastDayOfMonth;

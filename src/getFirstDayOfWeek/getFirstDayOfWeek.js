@@ -16,7 +16,7 @@ import removeTime from '../removeTime/removeTime.js';
 
 
 /* ========================================================================== *\
-    EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Returns the first day of the week in which the provided date falls.
@@ -47,7 +47,7 @@ import removeTime from '../removeTime/removeTime.js';
  * getFirstDayOfWeek(new Date(2019, 0, 10), 0)
  * // -> Returns Sunday, January 6, 2019
  */
-export default function getFirstDayOfWeek(date, firstWeekDay = dayOfWeek.monday) {
+function getFirstDayOfWeek(date, firstWeekDay = dayOfWeek.monday) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -71,3 +71,10 @@ export default function getFirstDayOfWeek(date, firstWeekDay = dayOfWeek.monday)
 		? result
 		: addDays(result, delta);
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default getFirstDayOfWeek;

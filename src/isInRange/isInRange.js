@@ -1,5 +1,5 @@
 /* ========================================================================== *\
-    IMPORTS
+	IMPORTS
 \* ========================================================================== */
 import isEarlier from '../isEarlier/isEarlier.js';
 import isLater from '../isLater/isLater.js';
@@ -7,7 +7,7 @@ import isLater from '../isLater/isLater.js';
 
 
 /* ========================================================================== *\
-    EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Tests if a date is between two other dates.
@@ -28,10 +28,17 @@ import isLater from '../isLater/isLater.js';
  *
  * @since v1.0.0
  */
-export default function isInRange(date, minDate, maxDate, isMinMaxInclusive = true) {
+function isInRange(date, minDate, maxDate, isMinMaxInclusive = true) {
 	const
 		validAgainstMin = isLater(date, minDate, isMinMaxInclusive),
 		validAgainstMax = isEarlier(date, maxDate, isMinMaxInclusive);
 
 	return validAgainstMin && validAgainstMax;
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default isInRange;

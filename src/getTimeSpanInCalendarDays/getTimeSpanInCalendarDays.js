@@ -20,7 +20,7 @@ import removeTime from '../removeTime/removeTime.js';
 
 
 /* ========================================================================== *\
-	EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Calculates the number of calendar days between two dates.
@@ -47,7 +47,7 @@ import removeTime from '../removeTime/removeTime.js';
  * );
  * // -> Returns 1
  */
-export default function getTimeSpanInCalendarDays(date, otherDate, options) {
+function getTimeSpanInCalendarDays(date, otherDate, options) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -62,3 +62,10 @@ export default function getTimeSpanInCalendarDays(date, otherDate, options) {
 		options
 	);
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default getTimeSpanInCalendarDays;

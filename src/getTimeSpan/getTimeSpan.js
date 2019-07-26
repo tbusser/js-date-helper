@@ -62,7 +62,7 @@ function convertMilliseconds(milliseconds, resolution) {
 
 
 /* ========================================================================== *\
-	EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Calculates the number of days between two dates.
@@ -86,9 +86,9 @@ function convertMilliseconds(milliseconds, resolution) {
  *   new Date(2019, 0, 1),
  *   new Date(2019, 0, 15, 12, 45, 30, 500)
  * );
- * // => Returns { days: 14, hours: 12, minutes: 45, seconds: 30, milliseconds: 500 }
+ * // -> Returns { days: 14, hours: 12, minutes: 45, seconds: 30, milliseconds: 500 }
  */
-export default function getTimeSpan(date, otherDate, options) {
+function getTimeSpan(date, otherDate, options) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -107,3 +107,10 @@ export default function getTimeSpan(date, otherDate, options) {
 		milliseconds: delta % millisecondsPerSecond
 	};
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default getTimeSpan;

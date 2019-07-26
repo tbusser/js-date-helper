@@ -16,7 +16,7 @@ import removeTime from '../removeTime/removeTime.js';
 
 
 /* ========================================================================== *\
-    EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Returns the last day of the week in which the provided date falls.
@@ -47,7 +47,7 @@ import removeTime from '../removeTime/removeTime.js';
  * getLastDayOfWeek(new Date(2019, 0, 10), 0)
  * // -> Returns Saturday, January 12, 2019
  */
-export default function getLastDayOfWeek(date, firstWeekDay = dayOfWeek.monday) {
+function getLastDayOfWeek(date, firstWeekDay = dayOfWeek.monday) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -69,3 +69,10 @@ export default function getLastDayOfWeek(date, firstWeekDay = dayOfWeek.monday) 
 		? result
 		: addDays(result, delta);
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default getLastDayOfWeek;

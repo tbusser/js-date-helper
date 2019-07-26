@@ -9,7 +9,7 @@ import addDays from '../addDays/addDays.js';
 
 
 /* ========================================================================== *\
-	EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Creates an array of sequential Date instances.
@@ -45,7 +45,7 @@ import addDays from '../addDays/addDays.js';
  * //     Tuesday, January 1, 2019
  * // ]
  */
-export default function createRange(startDate, length) {
+function createRange(startDate, length) {
 	if (!isDateLike(startDate)) {
 		throw new TypeError(dateLikeTypeError('startDate'));
 	}
@@ -71,3 +71,10 @@ export default function createRange(startDate, length) {
 
 	return result;
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default createRange;

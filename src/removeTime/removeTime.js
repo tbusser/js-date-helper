@@ -7,7 +7,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike';
 
 
 /* ========================================================================== *\
-	EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Returns a new Date instance containing only the year, month, and day of the
@@ -29,7 +29,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike';
  * removeTime(new Date(2019, 0, 1, 10, 11, 12, 13))
  * // -> Returns January 1, 2019 at 00:00:00.000
  */
-export default function removeTime(date) {
+function removeTime(date) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -40,3 +40,10 @@ export default function removeTime(date) {
 
 	return result;
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default removeTime;

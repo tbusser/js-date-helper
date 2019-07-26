@@ -19,7 +19,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
 
 
 /* ========================================================================== *\
-	EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Calculates the number of days, as in 24 hour periods, between two dates.
@@ -65,7 +65,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
  * );
  * // -> Returns 1.5
  */
-export default function getTimeSpanInDays(date, otherDate, options) {
+function getTimeSpanInDays(date, otherDate, options) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -75,3 +75,10 @@ export default function getTimeSpanInDays(date, otherDate, options) {
 
 	return calculateTimeSpan(date, otherDate, resolution.days, options);
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default getTimeSpanInDays;

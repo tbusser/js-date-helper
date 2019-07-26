@@ -12,14 +12,13 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
 \* ========================================================================== */
 /**
  * @typedef {import('../typeDefs/index.js').TimeSpanResultOptions} TimeSpanResultOptions
- *
  * @private
  */
 
 
 
 /* ========================================================================== *\
-	EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Calculates the number of minutes between two dates.
@@ -55,7 +54,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
  * );
  * // -> Returns 1.5083333333333333
  */
-export default function getTimeSpanInMinutes(date, otherDate, options) {
+function getTimeSpanInMinutes(date, otherDate, options) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -65,3 +64,10 @@ export default function getTimeSpanInMinutes(date, otherDate, options) {
 
 	return calculateTimeSpan(date, otherDate, resolution.minutes, options);
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default getTimeSpanInMinutes;

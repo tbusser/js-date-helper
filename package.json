@@ -11,7 +11,7 @@
   "scripts": {
     "cover": "cross-env NODE_ENV=test nyc mocha ./src/**/*.test.js",
     "test": "cross-env NODE_ENV=test _mocha --require @babel/register ./src/**/*.test.js",
-    "docs": " documentation build ./src/**/*.js -f html -o docs"
+    "docs": "jsdoc -c jsdoc.json"
   },
   "nyc": {
     "exclude": [
@@ -35,19 +35,20 @@
   "author": "Thijs Busser <tbusser@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.5.0",
-    "@babel/core": "^7.5.0",
-    "@babel/node": "^7.5.0",
-    "@babel/preset-env": "^7.5.0",
-    "@babel/register": "^7.4.4",
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
     "@istanbuljs/nyc-config-babel": "^2.1.1",
     "babel-plugin-add-module-exports": "^1.0.2",
-    "babel-plugin-istanbul": "^5.1.4",
+    "babel-plugin-istanbul": "^5.2.0",
     "chai": "^4.2.0",
     "core-js": "^3.1.4",
     "cross-env": "^5.2.0",
-    "documentation": "^12.0.1",
-    "mocha": "^6.1.4",
+    "docdash": "^1.1.1",
+    "jsdoc": "git+ssh://git@github.com/ricardohbin/jsdoc.git#support-ts-jsdocs",
+    "mocha": "^6.2.0",
     "mz": "^2.7.0",
     "nyc": "^14.1.1"
   }

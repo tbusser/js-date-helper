@@ -1,5 +1,5 @@
 /* ========================================================================== *\
-	EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Checks if the provided value is an instance of Date representing a
@@ -27,10 +27,17 @@
  * isValidDate(1563362089032)
  * // -> Returns false, while a valid timestamp it is not an instance of Date.
  */
-export default function isValidDate(value) {
+function isValidDate(value) {
 	// When the test passes, value is an instance of Date. Check to make sure
 	// getTime() doesn't return NaN to see if it represents a valid date.
 	return (Object.prototype.toString.call(value) === '[object Date]')
 		? !isNaN(value.getTime())
 		: false;
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default isValidDate;
