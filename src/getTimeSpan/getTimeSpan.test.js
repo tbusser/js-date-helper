@@ -1,7 +1,5 @@
 import { expect } from 'chai';
 import getTimeSpan from './getTimeSpan.js';
-import getTimeSpanInDays from '../getTimeSpanInDays/getTimeSpanInDays.js';
-import getTimeSpanInMilliseconds from '../getTimeSpanInMilliseconds/getTimeSpanInMilliseconds.js';
 
 const
 	firstDate = new Date(2019, 0, 1),
