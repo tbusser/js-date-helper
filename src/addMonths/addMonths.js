@@ -9,7 +9,7 @@ import getLastDayOfMonth from '../getLastDayOfMonth/getLastDayOfMonth.js';
 
 
 /* ========================================================================== *\
-	EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Adds, or subtracts, the given number of months from the provided date. In
@@ -39,7 +39,7 @@ import getLastDayOfMonth from '../getLastDayOfMonth/getLastDayOfMonth.js';
  * addMonths(new Date(2019, 0, 31), 1);
  * // -> Returns Thursday, February 28, 2019 because there is no February 31.
  */
-export default function addMonths(date, months) {
+function addMonths(date, months) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -70,3 +70,10 @@ export default function addMonths(date, months) {
 
 	return result;
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default addMonths;

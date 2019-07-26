@@ -19,7 +19,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
 
 
 /* ========================================================================== *\
-	EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Calculates the number of milliseconds between two dates.
@@ -56,7 +56,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
  * );
  * // -> Returns -1500
  */
-export default function getTimeSpanInMilliseconds(date, otherDate, options) {
+function getTimeSpanInMilliseconds(date, otherDate, options) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -66,3 +66,10 @@ export default function getTimeSpanInMilliseconds(date, otherDate, options) {
 
 	return calculateTimeSpan(date, otherDate, resolution.milliseconds, options);
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default getTimeSpanInMilliseconds;

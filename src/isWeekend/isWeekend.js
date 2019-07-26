@@ -9,7 +9,7 @@ import { defaultWeekend } from '../constants/index.js';
 
 
 /* ========================================================================== *\
-	EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Tests if the provided date falls on the weekend.
@@ -37,7 +37,7 @@ import { defaultWeekend } from '../constants/index.js';
  * isWeekend(new Date(2019, 0, 4), [5, 6])
  * // -> Returns true
  */
-export default function isWeekend(date, weekendDays = defaultWeekend) {
+function isWeekend(date, weekendDays = defaultWeekend) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -50,3 +50,10 @@ export default function isWeekend(date, weekendDays = defaultWeekend) {
 
 	return weekendDays.some(weekendDay => dayOfWeek === weekendDay);
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default isWeekend;

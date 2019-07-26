@@ -7,7 +7,7 @@ import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages';
 
 
 /* ========================================================================== *\
-	EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Checks if two dates fall in the same month of the same year
@@ -33,7 +33,7 @@ import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages';
  * isSameMonthAndYear(new Date(2019, 0, 1), new Date(2020, 0, 1))
  * // -> Returns false
  */
-export default function isSameMonthAndYear(date, otherDate) {
+function isSameMonthAndYear(date, otherDate) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -51,3 +51,10 @@ export default function isSameMonthAndYear(date, otherDate) {
 		dateA.getFullYear() === dateB.getFullYear()
 	);
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default isSameMonthAndYear;

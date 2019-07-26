@@ -7,7 +7,7 @@ import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages.js';
 
 
 /* ========================================================================== *\
-    EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Test if the provided date falls before a maximum date. The comparison is made
@@ -42,7 +42,7 @@ import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages.js';
  * isEarlier(new Date(2019, 0, 1), new Date(2019, 0, 1), false);
  * // -> Returns false, January 2019 is not earlier than itself.
  */
-export default function isEarlier(date, maxDate, isInclusive = true) {
+function isEarlier(date, maxDate, isInclusive = true) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -58,3 +58,10 @@ export default function isEarlier(date, maxDate, isInclusive = true) {
 		? dateTimestamp <= maxDateTimestamp
 		: dateTimestamp < maxDateTimestamp;
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default isEarlier;

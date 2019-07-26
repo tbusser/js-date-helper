@@ -11,7 +11,7 @@ import removeTime from '../removeTime/removeTime.js';
 
 
 /* ========================================================================== *\
-	EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Creates an array of sequential Date instances.
@@ -38,7 +38,7 @@ import removeTime from '../removeTime/removeTime.js';
  * //     Thursday, January 3, 2019
  * // ]
  */
-export default function createRangeForDays(startDate, endDate) {
+function createRangeForDays(startDate, endDate) {
 	if (!isDateLike(startDate)) {
 		throw new TypeError(dateLikeTypeError('startDate'));
 	}
@@ -63,3 +63,9 @@ export default function createRangeForDays(startDate, endDate) {
 
 	return result;
 }
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default createRangeForDays;

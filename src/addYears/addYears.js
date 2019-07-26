@@ -8,7 +8,7 @@ import addMonths from '../addMonths/addMonths';
 
 
 /* ========================================================================== *\
-	EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Adds, or subtracts, the specified number of years from the provided date.
@@ -35,7 +35,7 @@ import addMonths from '../addMonths/addMonths';
  * addYears(new Date(2019, 0, 1), -5)
  * // -> Returns Wednesday, December 27, 2014
  */
-export default function addYears(date, years) {
+function addYears(date, years) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -45,3 +45,10 @@ export default function addYears(date, years) {
 
 	return addMonths(date, years * 12);
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default addYears;

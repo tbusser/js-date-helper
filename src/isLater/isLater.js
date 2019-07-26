@@ -1,5 +1,5 @@
 /* ========================================================================== *\
-    IMPORTS
+	IMPORTS
 \* ========================================================================== */
 import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages.js';
 import isDateLike from '../_lib/isDateLike/isDateLike.js';
@@ -7,7 +7,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
 
 
 /* ========================================================================== *\
-    EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Test if the provided date falls after a minimum date.
@@ -40,7 +40,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
  * // Tests if date is later to itself but exclude the min date itself.
  * isLater(new Date(2019, 0, 1), new Date(2019, 0, 1), false);
  * // -> Returns false, January 2019 is not later than itself. */
-export default function isLater(date, minDate, isInclusive = true) {
+function isLater(date, minDate, isInclusive = true) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -56,3 +56,10 @@ export default function isLater(date, minDate, isInclusive = true) {
 		? dateTimestamp >= minDateTimestamp
 		: dateTimestamp > minDateTimestamp;
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default isLater;

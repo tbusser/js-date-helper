@@ -7,7 +7,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike';
 
 
 /* ========================================================================== *\
-	EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Adds, or subtracts, the specified number of days from the provided date.
@@ -34,7 +34,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike';
  * addDays(new Date(2019, 0, 1), -5)
  * // -> Returns Thursday, December 27, 2018
  */
-export default function addDays(date, days) {
+function addDays(date, days) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
@@ -48,3 +48,10 @@ export default function addDays(date, days) {
 
 	return result;
 }
+
+
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default addDays;

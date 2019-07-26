@@ -1,5 +1,5 @@
 /* ========================================================================== *\
-    IMPORTS
+	IMPORTS
 \* ========================================================================== */
 import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages.js';
 import isDateLike from '../_lib/isDateLike/isDateLike.js';
@@ -9,7 +9,7 @@ import removeTime from '../removeTime/removeTime.js';
 
 
 /* ========================================================================== *\
-    EXPORTS
+	PUBLIC API
 \* ========================================================================== */
 /**
  * Checks if the provided date is for the current date. It only checks if the
@@ -30,10 +30,15 @@ import removeTime from '../removeTime/removeTime.js';
  * isToday(new Date())
  * // -> Returns true, by default a new Date instance is for today.
  */
-export default function isToday(date) {
+function isToday(date) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
 
 	return removeTime(date).getTime() === removeTime(new Date()).getTime();
 }
+
+/* ========================================================================== *\
+	EXPORTS
+\* ========================================================================== */
+export default isToday;
