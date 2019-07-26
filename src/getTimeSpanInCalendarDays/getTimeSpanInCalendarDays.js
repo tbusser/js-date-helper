@@ -36,7 +36,7 @@ import removeTime from '../removeTime/removeTime.js';
  *         the expected type.
  *
  * @see To calculate the difference in 24 hour periods use {@link getTimeSpanInDays}.
- * @since {next}
+ * @since v1.2.0
  *
  * @example
  * // Get the number of calendar days between January 1 at 23:59:59.999 and

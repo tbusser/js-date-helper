@@ -34,7 +34,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
  *
- * @since {next}
+ * @since v1.2.0
  *
  * @example
  * // Calculate the number of minutes between January 1, 2019 at 00:01:00.000

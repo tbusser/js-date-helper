@@ -13,7 +13,7 @@
  * @property {boolean} [rounded=true] Returns the result as an integer rounded
  *           to the nearest completed unit of time.
  *
- * @since {next}
+ * @since v1.2.0
  */
 
 
@@ -30,5 +30,7 @@
  *           full minute.
  * @property {number} milliseconds The number of milliseconds that don't make a
  *           full second.
+ *
+ * @since v1.2.0
  */
 export default {};

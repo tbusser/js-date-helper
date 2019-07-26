@@ -35,7 +35,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike.js';
  *         the expected type.
  *
  * @see To calculate the difference in calendar days use {@link getTimeSpanInCalendarDays}.
- * @since {next}
+ * @since v1.2.0
  *
  * @example
  * // Get the number of days between January 1 at 23:59:59.999 and

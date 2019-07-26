@@ -112,7 +112,7 @@ export const resolution = {
  * @returns {number} Returns the difference between the provided dates in the
  *          specified resolution.
  *
- * @since {next}
+ * @since v1.2.0
  * @see Resolution
  *
  * @private
