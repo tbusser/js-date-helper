@@ -7,6 +7,9 @@ jobs:
     - stage: tests
       name: "Unit tests"
       script: npm test
+    - state: bundling
+      name: "Bundle test"
+      script: ./scripts/test-bundle.sh
     - stage: npm release
       name: "Release to NMP"
       if: tag IS present
