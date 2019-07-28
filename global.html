@@ -29,7 +29,7 @@
     
     <input type="text" id="nav-search" placeholder="Search" />
     
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addDays">addDays</a></li><li><a href="global.html#addMonths">addMonths</a></li><li><a href="global.html#addYears">addYears</a></li><li><a href="global.html#createRange">createRange</a></li><li><a href="global.html#createRangeForDays">createRangeForDays</a></li><li><a href="global.html#getFirstDayOfWeek">getFirstDayOfWeek</a></li><li><a href="global.html#getLastDayOfMonth">getLastDayOfMonth</a></li><li><a href="global.html#getLastDayOfWeek">getLastDayOfWeek</a></li><li><a href="global.html#getTimeSpan">getTimeSpan</a></li><li><a href="global.html#getTimeSpanInCalendarDays">getTimeSpanInCalendarDays</a></li><li><a href="global.html#getTimeSpanInDays">getTimeSpanInDays</a></li><li><a href="global.html#getTimeSpanInHours">getTimeSpanInHours</a></li><li><a href="global.html#getTimeSpanInMilliseconds">getTimeSpanInMilliseconds</a></li><li><a href="global.html#getTimeSpanInMinutes">getTimeSpanInMinutes</a></li><li><a href="global.html#getTimeSpanInSeconds">getTimeSpanInSeconds</a></li><li><a href="global.html#isEarlier">isEarlier</a></li><li><a href="global.html#isInRange">isInRange</a></li><li><a href="global.html#isLater">isLater</a></li><li><a href="global.html#isSameMonthAndYear">isSameMonthAndYear</a></li><li><a href="global.html#isToday">isToday</a></li><li><a href="global.html#isValidDate">isValidDate</a></li><li><a href="global.html#isWeekend">isWeekend</a></li><li><a href="global.html#removeTime">removeTime</a></li><li><a href="global.html#TimeSpan">TimeSpan</a></li><li><a href="global.html#TimeSpanResultOptions">TimeSpanResultOptions</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addDays">addDays</a></li><li><a href="global.html#addMonths">addMonths</a></li><li><a href="global.html#addYears">addYears</a></li><li><a href="global.html#createRange">createRange</a></li><li><a href="global.html#createRangeForDays">createRangeForDays</a></li><li><a href="global.html#getFirstDayOfWeek">getFirstDayOfWeek</a></li><li><a href="global.html#getLastDayOfMonth">getLastDayOfMonth</a></li><li><a href="global.html#getLastDayOfWeek">getLastDayOfWeek</a></li><li><a href="global.html#getTimeSpan">getTimeSpan</a></li><li><a href="global.html#getTimeSpanInCalendarDays">getTimeSpanInCalendarDays</a></li><li><a href="global.html#getTimeSpanInDays">getTimeSpanInDays</a></li><li><a href="global.html#getTimeSpanInHours">getTimeSpanInHours</a></li><li><a href="global.html#getTimeSpanInMilliseconds">getTimeSpanInMilliseconds</a></li><li><a href="global.html#getTimeSpanInMinutes">getTimeSpanInMinutes</a></li><li><a href="global.html#getTimeSpanInSeconds">getTimeSpanInSeconds</a></li><li><a href="global.html#isEarlier">isEarlier</a></li><li><a href="global.html#isInRange">isInRange</a></li><li><a href="global.html#isLater">isLater</a></li><li><a href="global.html#isLeapYear">isLeapYear</a></li><li><a href="global.html#isSameMonthAndYear">isSameMonthAndYear</a></li><li><a href="global.html#isToday">isToday</a></li><li><a href="global.html#isValidDate">isValidDate</a></li><li><a href="global.html#isWeekend">isWeekend</a></li><li><a href="global.html#removeTime">removeTime</a></li><li><a href="global.html#TimeSpan">TimeSpan</a></li><li><a href="global.html#TimeSpanResultOptions">TimeSpanResultOptions</a></li></ul>
 </nav>
 
 <div id="main">
@@ -4758,6 +4758,200 @@ the expected type.</p>
 <div class="param-desc">
     <p>Returns true when the provided date is later than
 the provided min date.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="isLeapYear"><span class="type-signature"></span>isLeapYear<span class="signature">(date)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>v1.3.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Tests if the provided date falls in a leap year.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// Is a date in the year 2000 in a leap year?isLeapYear(new Date(2000, 6, 20))// -> Returns true</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>date</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+|
+
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The date to test.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>A TypeError is thrown when the arguments are not of
+the expected type.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">TypeError</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Returns true when the provided date falls in a leap year.</p>
 </div>
 
 
