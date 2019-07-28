@@ -19,7 +19,7 @@ import isDateLike from '../_lib/isDateLike/isDateLike';
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
  *
- * @since {next}
+ * @since v1.3.0
  *
  * @example
  * // Is a date in the year 2000 in a leap year?
