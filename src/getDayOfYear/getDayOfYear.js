@@ -14,7 +14,8 @@ import getTimeSpanInCalendarDays from '../getTimeSpanInCalendarDays/getTimeSpanI
 /**
  * Returns which day of the year a given date is.
  *
- * @param {Date|number} date The date to test.
+ * @param {Date|number} date The date for which to return the day number in the
+ *        year for.
  *
  * @returns {boolean} Returns which day of the year the given date is.
  *
