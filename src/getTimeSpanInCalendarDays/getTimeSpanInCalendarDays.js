@@ -2,9 +2,9 @@
 	IMPORTS
 \* ========================================================================== */
 import calculateTimeSpan, { resolution } from '../_lib/calculateTimeSpan/calculateTimeSpan.js';
+import makeUTCMidnight from '../_lib/makeUTCMidnight/makeUTCMidnight.js';
 import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages.js';
 import isDateLike from '../_lib/isDateLike/isDateLike.js';
-import removeTime from '../removeTime/removeTime.js';
 
 
 
@@ -55,9 +55,11 @@ function getTimeSpanInCalendarDays(date, otherDate, options) {
 		throw new TypeError(dateLikeTypeError('otherDate'));
 	}
 
+	// The date arguments need to be in UTC midnight or else the result will be
+	// incorrect when one argument is in DST and the other isn't.
 	return calculateTimeSpan(
-		removeTime(date),
-		removeTime(otherDate),
+		makeUTCMidnight(date),
+		makeUTCMidnight(otherDate),
 		resolution.days,
 		options
 	);

@@ -34,4 +34,15 @@ describe('getTimeSpanInCalendarDays', () => {
 		// eslint-disable-next-line object-property-newline
 		expect(getTimeSpanInCalendarDays(secondDate, firstDate, { absolute: false, rounded: false })).to.equal(result);
 	});
+
+	it('should return the right time span for any given date', () => {
+		const start = new Date(2016, 0, 1);
+		for (var day = 1; day <= 400; day++) {
+			const
+				date = new Date(2016, 0, day),
+				result = day - 1;
+			// eslint-disable-next-line max-len
+			expect(getTimeSpanInCalendarDays(start, date)).to.equal(result, `Invalid time span for end date ${ date.toDateString() }`);
+		}
+	})
 });
