@@ -37,10 +37,10 @@ Contributions are more than welcome. If you want to contribute to this project, 
 - The project uses ESLint to lint the code, please make sure your changes do not introduce linting issues.
 - Each library method lives in its own subfolder under the `src` folder. For each method there should be a similar named test file with the unit tests.
 ```
-- /src
-  |- /myCoolFeature
-     |- myCoolFeature.js
-     |- myCoolFeature.test.js
+─ src/
+  └─ myCoolFeature/
+     ├─ myCoolFeature.js
+     └─ myCoolFeature.test.js
 ```
 - Each method must contain unit tests to make sure everything keeps working as intended.
 
