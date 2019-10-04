@@ -22,7 +22,7 @@ import getTimeSpanInCalendarDays from '../getTimeSpanInCalendarDays/getTimeSpanI
  * @throws {TypeError} A TypeError is thrown when the arguments are not of
  *         the expected type.
  *
- * @since {next}
+ * @since v1.4.0
  *
  * @example
  * // Which day of the year is September 27, 2019
