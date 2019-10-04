@@ -24,7 +24,7 @@ import removeTime from '../removeTime/removeTime.js';
  * @throws {TypeError} A TypeError is thrown when the provided value is not of
  *         type Date or Number.
  *
- * @since {next}
+ * @since v1.4.0
  *
  * @example
  * // Returns the first day of January 2019
