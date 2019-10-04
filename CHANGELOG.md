@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- method `getDayOfYear`.
+- method `getDayOfYear`
+- method `getFirstDayOfMonth`
 
 ## [1.3.1] - 2019-07-29
 ### Fixed
