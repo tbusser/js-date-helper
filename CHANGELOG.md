@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.0] - 2019-10-05
+### Added
+- method `getDayOfYear`
+- method `getFirstDayOfMonth`
+
 ## [1.3.1] - 2019-07-29
 ### Fixed
 - Time span calculations with a result in calendar days returned a wrong value when the input dates had one date in DST and the other not in DST.
@@ -64,7 +69,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - There was an error in the script generating the index.js, it was referencing the old file names from before the current naming scheme
 
-[Unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.3.1...HEAD
+[Unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/tbusser/js-date-helper/compare/v1.3.1...v1.4.0
 [1.3.1]: https://github.com/tbusser/js-date-helper/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/tbusser/js-date-helper/compare/v1.2.1...v1.3.0
 [1.2.1]: https://github.com/tbusser/js-date-helper/compare/v1.2.0...v1.2.1

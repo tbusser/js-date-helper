@@ -5,7 +5,6 @@ import { dateLikeTypeError } from '../_lib/errorMessages/errorMessages';
 import isDateLike from '../_lib/isDateLike/isDateLike';
 
 import removeTime from '../removeTime/removeTime.js';
-import getFirstDayOfMonth from '../getFirstDayOfMonth/getFirstDayOfMonth.js';
 
 
 
@@ -25,26 +24,24 @@ import getFirstDayOfMonth from '../getFirstDayOfMonth/getFirstDayOfMonth.js';
  * @throws {TypeError} A TypeError is thrown when the provided value is not of
  *         type Date or Number.
  *
- * @since v1.0.0
+ * @since {next}
  *
  * @example
- * // Returns the last day of January 2019
- * getLastDayOfMonth(new Date(2019, 0, 10, 10, 11, 12));
- * // -> Returns Thursday, January 31, 2019 at 00:00:00
+ * // Returns the first day of January 2019
+ * getFirstDayOfMonth(new Date(2019, 0, 10, 10, 11, 12));
+ * // -> Returns Tuesday, January 1, 2019 at 00:00:00
  */
-function getLastDayOfMonth(date) {
+function getFirstDayOfMonth(date) {
 	if (!isDateLike(date)) {
 		throw new TypeError(dateLikeTypeError());
 	}
 
 	const
-		result = getFirstDayOfMonth(date);
+		result = new Date(date);
 
-	// Advance the day to the next month.
-	result.setMonth(result.getMonth() + 1);
-	// By setting the date to 0 the date will be set to the last day of the
-	// previous month which is the month of the initial date.
-	result.setDate(0);
+	// Set the date to 1 incase the date exceeds the number of days in the next
+	// month, this will cause the result to be off by one month.
+	result.setDate(1);
 
 	return removeTime(result);
 }
@@ -54,4 +51,4 @@ function getLastDayOfMonth(date) {
 /* ========================================================================== *\
 	EXPORTS
 \* ========================================================================== */
-export default getLastDayOfMonth;
+export default getFirstDayOfMonth;
