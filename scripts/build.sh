@@ -21,10 +21,11 @@ env NODE_ENV='commonjs' babel src --source-root src --out-dir "$dir" --ignore te
 # Transpile SRC to ESM modules
 env NODE_ENV='esm' babel src --source-root src --out-dir "$dir/esm" --ignore test.js,benchmark.js --quiet
 
-cp -r "package.json" "$dir"
+./scripts/transform.js
 cp -r "README.md" "$dir"
 
 # Remove the test files
 find "$dir" -type f -name "*.test.js" -delete
+
 
 ./scripts/package-json.js

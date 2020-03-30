@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.1] - 2020-03-30
+### Fixed
+- Fixed the build so it is able to run on Node 12.16.1 (LTS)
+
 ## [1.5.0] - 2020-03-30
 ### Added
 - method `createRangeForMonth`
@@ -73,7 +77,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - There was an error in the script generating the index.js, it was referencing the old file names from before the current naming scheme
 
-[Unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.5.0...HEAD
+[Unreleased]: https://github.com/olivierlacan/keep-a-changelog/compare/v1.5.1...HEAD
+[1.5.1]: https://github.com/tbusser/js-date-helper/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/tbusser/js-date-helper/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/tbusser/js-date-helper/compare/v1.3.1...v1.4.0
 [1.3.1]: https://github.com/tbusser/js-date-helper/compare/v1.3.0...v1.3.1
