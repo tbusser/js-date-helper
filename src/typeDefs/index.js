@@ -14,7 +14,7 @@
  *           always be 6 weeks long. This setting is only used when padMonth is
  *           true and defaults to false.
  *
- * @since {next}
+ * @since v1.5.0
  */
 
 
