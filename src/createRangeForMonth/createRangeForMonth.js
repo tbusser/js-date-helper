@@ -112,7 +112,7 @@ function determineBoundaries(date, options) {
  * @throws {RangeError} A RangeError is thrown when the firstWeekDay is not a
  *         valid day of the week.
  *
- * @since {next}
+ * @since v1.5.0
  *
  * @example
  * // Create a range for the month January 2019.
