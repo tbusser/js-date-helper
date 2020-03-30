@@ -2,6 +2,23 @@
 	TYPE DEFINITIONS
 \* ========================================================================== */
 /**
+ * Options to control the output of a calendar month range.
+ *
+ * @typedef {Object} CalenderMonthRangeOptions
+ *
+ * @property {number} firstWeekDay Specify on which day a week starts. By
+ *           default this will be 1 (Monday).
+ * @property {boolean} padMonth Indicated whether or not the month should be
+ *           padded to full weeks. This is false by default.
+ * @property {boolean} padWeeks Indicates whether or not a padded month should
+ *           always be 6 weeks long. This setting is only used when padMonth is
+ *           true and defaults to false.
+ *
+ * @since {next}
+ */
+
+
+/**
  * Options to control the output of a time span calculation.
  *
  * @typedef {Object} TimeSpanResultOptions
