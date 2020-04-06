@@ -14,7 +14,8 @@ const
 	fileName = 'package.json',
 	path = require('path'),
 	rootPath = path.resolve(process.cwd()),
-	distPath = process.env.PACKAGE_OUTPUT_PATH || path.resolve(process.cwd(), 'dist');
+	distPath = process.env.PACKAGE_OUTPUT_PATH || path.resolve(process.cwd(), 'dist'),
+	distESMPath = `${distPath}/esm`;
 
 
 
@@ -30,9 +31,8 @@ async function transform() {
 	delete json.nyc;
 	delete json.scripts;
 
-	json.type = 'module';
-
 	await writeFile(`${distPath}/${fileName}`, JSON.stringify(json, null, 4));
+	await writeFile(`${distESMPath}/${fileName}`, JSON.stringify({ type: 'module' }, null, 4));
 }
 
 
