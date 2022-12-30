@@ -48,7 +48,7 @@
     "cross-env": "^5.2.0",
     "docdash": "^1.1.1",
     "jsdoc": "git+https://github.com/tbusser/jsdoc.git#support-ts-jsdocs",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "mz": "^2.7.0",
     "nyc": "^14.1.1"
   }
